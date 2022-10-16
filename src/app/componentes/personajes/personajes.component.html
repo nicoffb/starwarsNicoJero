@@ -10,6 +10,6 @@
     <mat-card-title>{{personaje.name}}</mat-card-title>
     <mat-card-subtitle>{{personaje.birth_year}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1920px-Star_Wars_Logo.svg.png" >
+  <img mat-card-image [src]="'https://starwars-visualguide.com/assets/img/characters/' + personaje.url.split('/')[5] + '.jpg' " >
 </mat-card>
 </div>
