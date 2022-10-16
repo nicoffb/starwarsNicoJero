@@ -1,1 +1,13 @@
-<p>naves works!</p>
+<h1>Naves de Star Wars</h1>
+
+<div class="contenedor">
+    <mat-card class="example-card" *ngFor="let nave of listaNaves">
+        <mat-card-header>
+            <mat-card-title>{{nave.name}}</mat-card-title>
+            <mat-card-subtitle>{{nave.manufacturer}}</mat-card-subtitle>
+            <mat-card-subtitle>{{nave.cost_in_credits}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image
+            [src]="'https://starwars-visualguide.com/assets/img/starships/' + nave.url.split('/')[5] + '.jpg' ">
+    </mat-card>
+</div>

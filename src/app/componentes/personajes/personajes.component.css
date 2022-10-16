@@ -1,0 +1,16 @@
+h1{
+    text-align: center;
+}
+
+
+.example-card {
+    max-width: 500px;
+    
+  }
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+}
