@@ -1,7 +1,7 @@
 export interface EspeciesRespuesta {
     count:    number;
     next:     string;
-    previous: null;
+    previous: string;
     results:  Especie[];
 }
 
