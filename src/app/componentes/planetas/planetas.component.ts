@@ -10,11 +10,29 @@ import { Planeta } from '../../interfaces/planetas';
 export class PlanetasComponent implements OnInit {
 
   listaPlanetas: Planeta[] = [];
+  numPags = 0;
+  actualPag=0;
 
   constructor(private planetasService: PlanetasService) { }
 
   ngOnInit(): void {
-    this.planetasService.getPlanetas().subscribe(resp => { this.listaPlanetas = resp.results });
+    this.getPagPlanetas(1);
+  }
+
+  getPagPlanetas(pag:number){
+    this.planetasService.getPlanetas(pag).subscribe(respuesta => {
+      this.listaPlanetas = respuesta.results;
+      this.numPags= Math.ceil(respuesta.count/10)
+      this.actualPag=pag;
+    })
+  }
+
+  getPlanetaImgUrl(planeta : Planeta) : string{
+    return 'https://starwars-visualguide.com/assets/img/planets/' + planeta.url.split('/')[5] + '.jpg'
+  }
+
+  counter() {
+    return new Array(this.numPags);
   }
 
 }

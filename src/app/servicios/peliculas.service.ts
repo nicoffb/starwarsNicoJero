@@ -12,8 +12,8 @@ export class PeliculasService {
 
   constructor(private http: HttpClient) { }
 
-  public getPeliculas(): Observable<PeliculasRespuesta> {
-    return this.http.get<PeliculasRespuesta>(`${environment.apiBaseUrl}/films/`);
+  public getPeliculas(pag:number): Observable<PeliculasRespuesta> {
+    return this.http.get<PeliculasRespuesta>(`${environment.apiBaseUrl}/films/?page=${pag}`);
   }
 
 }

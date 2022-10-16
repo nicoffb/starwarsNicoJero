@@ -1,4 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: url("https://i.natgeofe.com/k/a2a738a9-e019-4911-98e6-17f31c45ac88/milky-way-2_3x2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@font-face {
+  font-family: "star jedi";
+  src: url("assets/fonts/Starjedi.ttf");
+}
