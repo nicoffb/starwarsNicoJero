@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EspeciesService } from '../../servicios/especies.service';
+import { Especie } from '../../interfaces/especies';
 
 @Component({
   selector: 'app-especies',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EspeciesComponent implements OnInit {
 
-  constructor() { }
+  listaEspecies: Especie[] = [];
+
+  constructor(private especiesService: EspeciesService) { }
 
   ngOnInit(): void {
+    this.especiesService.getEspecies().subscribe(resp => { this.listaEspecies = resp.results });
   }
 
 }

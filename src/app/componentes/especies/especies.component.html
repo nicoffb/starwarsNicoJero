@@ -1,1 +1,13 @@
-<p>especies works!</p>
+<h1>Especies de Star Wars</h1>
+
+<div class="contenedor">
+    <mat-card class="example-card" *ngFor="let especie of listaEspecies">
+        <mat-card-header>
+            <mat-card-title>{{especie.name}}</mat-card-title>
+            <mat-card-subtitle>{{especie.designation}}</mat-card-subtitle>
+            <mat-card-subtitle>{{especie.language}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image
+      [src]="'https://starwars-visualguide.com/assets/img/species/' + especie.url.split('/')[5] + '.jpg' ">
+    </mat-card>
+</div>

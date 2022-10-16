@@ -2,10 +2,10 @@ export interface EspeciesRespuesta {
     count:    number;
     next:     string;
     previous: null;
-    results:  Escepie[];
+    results:  Especie[];
 }
 
-export interface Escepie {
+export interface Especie {
     name:             string;
     classification:   string;
     designation:      Designation;
