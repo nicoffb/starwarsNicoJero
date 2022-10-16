@@ -10,13 +10,22 @@ import { PersonajesService } from '../../servicios/personajes.service';
 })
 export class PersonajesComponent implements OnInit {
   listaPersonajes: Personaje[] = [];
-
+  numPags = 0;
 
   constructor(private personajesService: PersonajesService) { }
 
   ngOnInit(): void {
-    this.personajesService.getPersonajes().subscribe(respuesta => {
-      this.listaPersonajes= respuesta.results;
-    })
+    this.getPagPersonajes(1)
+  }
+
+  getPagPersonajes(pag: number) {
+    this.personajesService.getPersonajes(pag).subscribe(respuesta => {
+      this.listaPersonajes = respuesta.results;
+      this.numPags = Math.ceil(respuesta.count / 10);
+    });
+  }
+
+  counter() {
+    return new Array(this.numPags);
   }
 }

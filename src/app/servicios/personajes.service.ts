@@ -11,7 +11,7 @@ export class PersonajesService {
 
   constructor(private http: HttpClient){}
 
-  public getPersonajes(): Observable<PersonajesRespuesta> {
-    return this.http.get<PersonajesRespuesta>(`${environment.apiBaseUrl}/people/`);
+  public getPersonajes(pag : number): Observable<PersonajesRespuesta> {
+    return this.http.get<PersonajesRespuesta>(`${environment.apiBaseUrl}/people?pag=${pag}`);   //page o pag?
   }
 }
